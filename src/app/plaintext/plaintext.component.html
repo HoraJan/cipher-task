@@ -1,11 +1,15 @@
-<div class='left'>
+<div class="left">
   <div id="left-column" class="plaintext">
     <article>
       <header>
         <h3>Plaintext</h3>
       </header>
       <div class="content">
-        <textarea placeholder="Enter plaintext" [ngModel]="plaintext"></textarea>
+        <textarea
+          placeholder="Enter plaintext"
+          [(ngModel)]="service.plainText"
+          (input)="convertToCiphertext($event.target.value)"
+        ></textarea>
       </div>
     </article>
   </div>

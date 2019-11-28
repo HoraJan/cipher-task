@@ -1,22 +1,19 @@
-import { Component, Input } from '@angular/core';
-import { ShiftValueService } from '../shiftvalue.service';
+import { Component, Input } from "@angular/core";
+import { ShiftValueService } from "../shiftvalue.service";
 
 @Component({
-  selector: 'ciphertext',
-  templateUrl: './ciphertext.component.html'
+  selector: "ciphertext",
+  templateUrl: "./ciphertext.component.html"
 })
 export class CiphertextComponent {
+  // ciphertext: string;
+  // @Input() cipherDisplayText: string = "";
+  // plainDisplayText: string = "";
+  constructor(public service: ShiftValueService) {}
 
-  ciphertext: string;
-  @Input() cipherDisplayText: string = "";
-  plainDisplayText: string = "";
-  constructor(public service: ShiftValueService) { }
-
-  convertToPlaintext(newCiphertext) {
- 
+  convertToPlaintext(newCiphertext: string) {
+    this.service.convertToPlaintext(newCiphertext);
   }
 
-  getPlainDisplayText() {
-    
-  }
+  // getPlainDisplayText() {}
 }

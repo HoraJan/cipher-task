@@ -5,7 +5,11 @@
         <h3>Ciphertext</h3>
       </header>
       <div class="content">
-        <textarea placeholder="Enter ciphertext" [ngModel]="ciphertext"></textarea>
+        <textarea
+          placeholder="Enter ciphertext"
+          [(ngModel)]="service.cipherText"
+          (input)="convertToPlaintext($event.target.value)"
+        ></textarea>
       </div>
     </article>
   </div>
